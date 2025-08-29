@@ -1,147 +1,109 @@
+# 📑 Engenharia de Requisitos – Sistema de E-commerce GM Confecções
 
-# TypeScript
+## 1. Introdução
 
-## 🎯 Funcionalidades
+O sistema de e-commerce tem como objetivo digitalizar o catálogo de produtos da **GM Confecções**, disponibilizando jogos de colcha, toalhas, lençóis, mantas e outros artigos de cama, mesa e banho.
+A solução busca oferecer uma experiência de compra simples, moderna e confiável, tanto para clientes finais quanto para a gestão interna de pedidos e fidelização.
 
-### 📱 **Interface Moderna**
-- Design clean e intuitivo
-- Paleta de cores sofisticada inspirada em moda e decoração
-- Navegação fluida com React Navigation
-- Componentes Material Design com React Native Paper
+---
 
-### 🛍️ **Catálogo Completo**
-- **Tecidos por metro**: Especificações técnicas detalhadas (composição, largura, gramatura)
-- **Produtos prontos**: Cortinas, toalhas, lençóis, capas de almofadas, mantas
-- Sistema de filtros avançado (categoria, cor, preço, estilo)
-- Busca inteligente por nome e descrição
-- Área de destaques e promoções
+## 2. Escopo
 
-### 🛒 **Carrinho e Pedidos**
-- Compra por metro para tecidos
-- Compra direta de peças prontas
-- Cálculo automático de preços
-- Histórico completo de pedidos
-- Sistema de rastreamento
+* Disponibilizar um catálogo online de **produtos prontos** (sem venda por metro).
+* Permitir que o cliente visualize, pesquise e filtre produtos.
+* Suportar compras online com integração a meios de pagamento.
+* Oferecer histórico de pedidos, favoritos e sistema de fidelidade.
 
-### 💳 **Pagamentos**
-- Integração com PIX
-- Cartão de crédito com parcelamento
-- Boleto bancário
-- Interface segura e intuitiva
+---
 
-### ❤️ **Relacionamento com Cliente**
-- Sistema de favoritos (lista de desejos)
-- Programa de fidelidade com pontos
-- Perfil completo do usuário
-- Notificações de promoções
+## 3. Atores
 
-## 🚀 Como Executar
+* **Cliente**: usuário final que navega, adiciona produtos ao carrinho e realiza compras.
+* **Administrador**: responsável por cadastrar produtos, gerenciar estoque, preços e acompanhar pedidos.
+* **Sistema de Pagamento**: integrações externas (PIX, cartão, boleto).
+* **Transportadora**: sistema de rastreamento de pedidos (futuro).
 
-### Pré-requisitos
-- Node.js (versão 14 ou superior)
-- Expo CLI
-- Emulador Android/iOS ou dispositivo físico
+---
 
-### Instalação
-```bash
-# Clone o repositório
-git clone [url-do-repositorio]
+## 4. Requisitos Funcionais
 
-# Entre na pasta do projeto
-cd FabricEcommerce
+### Catálogo
 
-# Instale as dependências
-npm install
+* RF01 – Exibir catálogo de produtos (jogos de colcha, toalhas, lençóis etc.)
+* RF02 – Permitir busca por nome e descrição.
+* RF03 – Oferecer filtros por categoria, cor, preço e estilo.
+* RF04 – Exibir detalhes: dimensões, composição, imagens, marca, avaliações.
+* RF05 – Destaques e promoções em destaque na tela inicial.
 
-# Execute o projeto
-npm start
-```
+### Carrinho e Pedido
 
-### Executar no dispositivo
-```bash
-# Android
-npm run android
+* RF06 – Adicionar/remover produtos no carrinho.
+* RF07 – Cálculo automático de preço total.
+* RF08 – Finalizar compra com checkout simplificado.
+* RF09 – Exibir histórico de pedidos no perfil do cliente.
+* RF10 – Permitir rastrear status do pedido.
 
-# iOS
-npm run ios
+### Pagamentos
 
-# Web
-npm run web
-```
+* RF11 – Aceitar pagamento via PIX.
+* RF12 – Aceitar cartão de crédito (parcelado).
+* RF13 – Aceitar boleto bancário.
 
-## 📁 Estrutura do Projeto
+### Relacionamento com Cliente
 
-```
-src/
-├── contexts/          # Contextos React (Auth, Cart)
-├── data/             # Dados mockados
-├── navigation/       # Configuração de navegação
-├── screens/          # Telas do aplicativo
-├── theme/            # Tema e cores
-└── types/            # Tipos TypeScript
-```
+* RF14 – Criar e manter perfil de cliente.
+* RF15 – Sistema de favoritos (lista de desejos).
+* RF16 – Programa de fidelidade com pontos por compra.
+* RF17 – Notificações de promoções.
 
-## 🎨 Design System
+---
 
-### Cores Principais
-- **Primary**: #8B4B8C (Roxo elegante)
-- **Secondary**: #D4A574 (Dourado suave)
-- **Background**: #FAFAFA (Cinza claro)
-- **Surface**: #FFFFFF (Branco)
+## 5. Requisitos Não Funcionais
 
-### Tipografia
-- Fontes Material Design 3
-- Hierarquia clara de títulos e textos
-- Legibilidade otimizada
+* RNF01 – Interface deve seguir design responsivo (mobile-first).
+* RNF02 – Disponibilidade mínima: 99%.
+* RNF03 – Navegação fluida com tempo de resposta < 3s.
+* RNF04 – Conformidade com **LGPD** para proteção de dados.
+* RNF05 – Segurança em transações financeiras (criptografia e HTTPS).
 
-## 📱 Telas Implementadas
+---
 
-1. **LoginScreen** - Autenticação e cadastro
-2. **HomeScreen** - Dashboard principal com destaques
-3. **CatalogScreen** - Catálogo com filtros e busca
-4. **ProductDetailScreen** - Detalhes do produto
-5. **CartScreen** - Carrinho de compras
-6. **CheckoutScreen** - Finalização da compra
-7. **ProfileScreen** - Perfil do usuário
-8. **FavoritesScreen** - Lista de favoritos
-9. **OrdersScreen** - Histórico de pedidos
+## 6. Regras de Negócio
 
-## 🔧 Tecnologias Utilizadas
+* RN01 – Pontos de fidelidade: 1 ponto a cada R\$ 10 em compras.
+* RN02 – Promoções podem ter prazo de validade definido.
+* RN03 – Produtos fora de estoque não podem ser adicionados ao carrinho.
+* RN04 – Parcelamento em até 6x no cartão de crédito.
 
-- **React Native** com Expo
-- **TypeScript** para tipagem
-- **React Navigation** para navegação
-- **React Native Paper** para UI components
-- **AsyncStorage** para persistência local
-- **Expo Linear Gradient** para gradientes
-- **React Native Super Grid** para layouts em grade
+---
 
-## 💡 Funcionalidades Especiais
+## 7. Casos de Uso (resumido)
 
-### Para Tecidos
-- Cálculo por metro
-- Especificações técnicas detalhadas
-- Visualização de composição e gramatura
+* **UC01 – Navegar no catálogo**
+* **UC02 – Buscar produto**
+* **UC03 – Filtrar produtos**
+* **UC04 – Visualizar detalhes do produto**
+* **UC05 – Adicionar ao carrinho**
+* **UC06 – Finalizar compra**
+* **UC07 – Efetuar pagamento**
+* **UC08 – Consultar histórico de pedidos**
+* **UC09 – Gerenciar perfil**
+* **UC10 – Favoritar produto**
 
-### Para Produtos Prontos
-- Dimensões específicas
-- Informações de marca
-- Avaliações e reviews
+---
 
-### Sistema de Fidelidade
-- Pontos por compra
-- Recompensas exclusivas
-- Acompanhamento no perfil
+## 8. Requisitos Futuros (Roadmap)
 
-## 🚀 Próximos Passos
+* Integração com APIs reais de pagamento e logística.
+* Push notifications.
+* Chat integrado (WhatsApp).
+* Sistema de reviews com fotos.
+* Programa de afiliados.
+* Simulação de ambientes com realidade aumentada (AR).
 
-- [ ] Integração com APIs reais
-- [ ] Push notifications
-- [ ] Chat integrado/WhatsApp
-- [ ] Simulação de tecidos em ambientes (AR)
-- [ ] Sistema de reviews e avaliações
-- [ ] Programa de afiliados
+---
 
-## 📄 Licença
+👉 Assim você tem uma **visão clara de requisitos** que pode evoluir para **casos de uso detalhados, protótipos e backlog de sprints**.
 
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Quer que eu faça também um **diagrama de casos de uso UML** baseado nesses requisitos? Isso deixaria ainda mais visual.
+s
