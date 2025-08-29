@@ -1,50 +1,147 @@
 
 # TypeScript
 
-[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
+## 🎯 Funcionalidades
 
+### 📱 **Interface Moderna**
+- Design clean e intuitivo
+- Paleta de cores sofisticada inspirada em moda e decoração
+- Navegação fluida com React Navigation
+- Componentes Material Design com React Native Paper
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+### 🛍️ **Catálogo Completo**
+- **Tecidos por metro**: Especificações técnicas detalhadas (composição, largura, gramatura)
+- **Produtos prontos**: Cortinas, toalhas, lençóis, capas de almofadas, mantas
+- Sistema de filtros avançado (categoria, cor, preço, estilo)
+- Busca inteligente por nome e descrição
+- Área de destaques e promoções
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
+### 🛒 **Carrinho e Pedidos**
+- Compra por metro para tecidos
+- Compra direta de peças prontas
+- Cálculo automático de preços
+- Histórico completo de pedidos
+- Sistema de rastreamento
 
-## Installing
+### 💳 **Pagamentos**
+- Integração com PIX
+- Cartão de crédito com parcelamento
+- Boleto bancário
+- Interface segura e intuitiva
 
-For the latest stable version:
+### ❤️ **Relacionamento com Cliente**
+- Sistema de favoritos (lista de desejos)
+- Programa de fidelidade com pontos
+- Perfil completo do usuário
+- Notificações de promoções
 
+## 🚀 Como Executar
+
+### Pré-requisitos
+- Node.js (versão 14 ou superior)
+- Expo CLI
+- Emulador Android/iOS ou dispositivo físico
+
+### Instalação
 ```bash
-npm install -D typescript
+# Clone o repositório
+git clone [url-do-repositorio]
+
+# Entre na pasta do projeto
+cd FabricEcommerce
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
+npm start
 ```
 
-For our nightly builds:
-
+### Executar no dispositivo
 ```bash
-npm install -D typescript@next
+# Android
+npm run android
+
+# iOS
+npm run ios
+
+# Web
+npm run web
 ```
 
-## Contribute
+## 📁 Estrutura do Projeto
 
-There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
-* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
-* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
-* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
-* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
-* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
-* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
+```
+src/
+├── contexts/          # Contextos React (Auth, Cart)
+├── data/             # Dados mockados
+├── navigation/       # Configuração de navegação
+├── screens/          # Telas do aplicativo
+├── theme/            # Tema e cores
+└── types/            # Tipos TypeScript
+```
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
-the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
+## 🎨 Design System
 
-## Documentation
+### Cores Principais
+- **Primary**: #8B4B8C (Roxo elegante)
+- **Secondary**: #D4A574 (Dourado suave)
+- **Background**: #FAFAFA (Cinza claro)
+- **Surface**: #FFFFFF (Branco)
 
-*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-*  [Homepage](https://www.typescriptlang.org/)
+### Tipografia
+- Fontes Material Design 3
+- Hierarquia clara de títulos e textos
+- Legibilidade otimizada
 
-## Roadmap
+## 📱 Telas Implementadas
 
-For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
+1. **LoginScreen** - Autenticação e cadastro
+2. **HomeScreen** - Dashboard principal com destaques
+3. **CatalogScreen** - Catálogo com filtros e busca
+4. **ProductDetailScreen** - Detalhes do produto
+5. **CartScreen** - Carrinho de compras
+6. **CheckoutScreen** - Finalização da compra
+7. **ProfileScreen** - Perfil do usuário
+8. **FavoritesScreen** - Lista de favoritos
+9. **OrdersScreen** - Histórico de pedidos
+
+## 🔧 Tecnologias Utilizadas
+
+- **React Native** com Expo
+- **TypeScript** para tipagem
+- **React Navigation** para navegação
+- **React Native Paper** para UI components
+- **AsyncStorage** para persistência local
+- **Expo Linear Gradient** para gradientes
+- **React Native Super Grid** para layouts em grade
+
+## 💡 Funcionalidades Especiais
+
+### Para Tecidos
+- Cálculo por metro
+- Especificações técnicas detalhadas
+- Visualização de composição e gramatura
+
+### Para Produtos Prontos
+- Dimensões específicas
+- Informações de marca
+- Avaliações e reviews
+
+### Sistema de Fidelidade
+- Pontos por compra
+- Recompensas exclusivas
+- Acompanhamento no perfil
+
+## 🚀 Próximos Passos
+
+- [ ] Integração com APIs reais
+- [ ] Push notifications
+- [ ] Chat integrado/WhatsApp
+- [ ] Simulação de tecidos em ambientes (AR)
+- [ ] Sistema de reviews e avaliações
+- [ ] Programa de afiliados
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
