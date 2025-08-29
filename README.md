@@ -1,27 +1,26 @@
-# 📑 Engenharia de Requisitos – Sistema de E-commerce GM Confecções
+# 📑 Engenharia de Requisitos – App Mobile GM Confecções
 
 ## 1. Introdução
 
-O sistema de e-commerce tem como objetivo digitalizar o catálogo de produtos da **GM Confecções**, disponibilizando jogos de colcha, toalhas, lençóis, mantas e outros artigos de cama, mesa e banho.
-A solução busca oferecer uma experiência de compra simples, moderna e confiável, tanto para clientes finais quanto para a gestão interna de pedidos e fidelização.
+O **aplicativo mobile Android** da GM Confecções será uma solução para disponibilizar online o catálogo de **jogos de colcha, toalhas, lençóis, mantas e artigos de cama, mesa e banho**.
+O sistema deve oferecer uma experiência de compra simples, moderna e intuitiva, garantindo que o cliente possa **navegar, comprar e acompanhar seus pedidos diretamente no celular**.
 
 ---
 
 ## 2. Escopo
 
-* Disponibilizar um catálogo online de **produtos prontos** (sem venda por metro).
-* Permitir que o cliente visualize, pesquise e filtre produtos.
-* Suportar compras online com integração a meios de pagamento.
-* Oferecer histórico de pedidos, favoritos e sistema de fidelidade.
+* Plataforma: **Android Mobile (APK e Play Store)**
+* Usuários: clientes finais da GM Confecções.
+* Objetivo: facilitar a compra de produtos prontos, oferecendo catálogo, carrinho, checkout, pagamento e fidelização.
 
 ---
 
 ## 3. Atores
 
-* **Cliente**: usuário final que navega, adiciona produtos ao carrinho e realiza compras.
-* **Administrador**: responsável por cadastrar produtos, gerenciar estoque, preços e acompanhar pedidos.
-* **Sistema de Pagamento**: integrações externas (PIX, cartão, boleto).
-* **Transportadora**: sistema de rastreamento de pedidos (futuro).
+* **Cliente (usuário mobile)** – navega, busca produtos, adiciona ao carrinho e realiza compras.
+* **Administrador (backoffice web/futuro)** – gerencia catálogo, preços e estoque.
+* **Sistema de Pagamento** – PIX, cartão, boleto.
+* **Sistema de Notificações Android** – push notifications para promoções e status de pedidos.
 
 ---
 
@@ -29,81 +28,76 @@ A solução busca oferecer uma experiência de compra simples, moderna e confiá
 
 ### Catálogo
 
-* RF01 – Exibir catálogo de produtos (jogos de colcha, toalhas, lençóis etc.)
+* RF01 – Exibir catálogo de produtos (jogos de colcha, toalhas, lençóis etc.).
 * RF02 – Permitir busca por nome e descrição.
-* RF03 – Oferecer filtros por categoria, cor, preço e estilo.
-* RF04 – Exibir detalhes: dimensões, composição, imagens, marca, avaliações.
-* RF05 – Destaques e promoções em destaque na tela inicial.
+* RF03 – Filtros por categoria, cor, preço e estilo.
+* RF04 – Exibir detalhes (dimensões, composição, imagens, marca, avaliações).
+* RF05 – Destaques e promoções na tela inicial.
 
-### Carrinho e Pedido
+### Carrinho e Pedidos
 
-* RF06 – Adicionar/remover produtos no carrinho.
-* RF07 – Cálculo automático de preço total.
-* RF08 – Finalizar compra com checkout simplificado.
-* RF09 – Exibir histórico de pedidos no perfil do cliente.
-* RF10 – Permitir rastrear status do pedido.
+* RF06 – Adicionar/remover produtos do carrinho.
+* RF07 – Calcular automaticamente o total da compra.
+* RF08 – Finalizar pedido via **checkout mobile simplificado**.
+* RF09 – Exibir histórico de pedidos no perfil.
+* RF10 – Rastrear status do pedido.
 
 ### Pagamentos
 
-* RF11 – Aceitar pagamento via PIX.
-* RF12 – Aceitar cartão de crédito (parcelado).
-* RF13 – Aceitar boleto bancário.
+* RF11 – Integração com **PIX** nativo (QR Code ou copia/cola).
+* RF12 – Pagamento via cartão de crédito (com parcelamento).
+* RF13 – Emissão de boleto bancário.
 
 ### Relacionamento com Cliente
 
-* RF14 – Criar e manter perfil de cliente.
-* RF15 – Sistema de favoritos (lista de desejos).
-* RF16 – Programa de fidelidade com pontos por compra.
-* RF17 – Notificações de promoções.
+* RF14 – Cadastro e autenticação de cliente (login por e-mail/Google).
+* RF15 – Sistema de favoritos.
+* RF16 – Programa de fidelidade com pontos acumulados.
+* RF17 – Notificações push de promoções e status de pedidos.
 
 ---
 
 ## 5. Requisitos Não Funcionais
 
-* RNF01 – Interface deve seguir design responsivo (mobile-first).
-* RNF02 – Disponibilidade mínima: 99%.
-* RNF03 – Navegação fluida com tempo de resposta < 3s.
-* RNF04 – Conformidade com **LGPD** para proteção de dados.
-* RNF05 – Segurança em transações financeiras (criptografia e HTTPS).
+* RNF01 – App deve rodar em Android **8.0 (Oreo)** ou superior.
+* RNF02 – Tempo de carregamento inicial < **3 segundos** em aparelhos intermediários.
+* RNF03 – Interface responsiva para telas de **5” a 7”**.
+* RNF04 – Operar mesmo com conexão instável (modo offline parcial usando cache local).
+* RNF05 – Usabilidade seguindo diretrizes **Material Design 3**.
+* RNF06 – Segurança: criptografia HTTPS + armazenamento seguro de tokens (AsyncStorage ou equivalente).
+* RNF07 – Suporte a **notificações push (Firebase Cloud Messaging)**.
 
 ---
 
 ## 6. Regras de Negócio
 
-* RN01 – Pontos de fidelidade: 1 ponto a cada R\$ 10 em compras.
-* RN02 – Promoções podem ter prazo de validade definido.
+* RN01 – Pontos de fidelidade: **1 ponto a cada R\$10 em compras**.
+* RN02 – Promoções com prazo de validade.
 * RN03 – Produtos fora de estoque não podem ser adicionados ao carrinho.
-* RN04 – Parcelamento em até 6x no cartão de crédito.
+* RN04 – Parcelamento em até **6x sem juros** no cartão.
 
 ---
 
 ## 7. Casos de Uso (resumido)
 
 * **UC01 – Navegar no catálogo**
-* **UC02 – Buscar produto**
-* **UC03 – Filtrar produtos**
+* **UC02 – Buscar produtos**
+* **UC03 – Aplicar filtros**
 * **UC04 – Visualizar detalhes do produto**
 * **UC05 – Adicionar ao carrinho**
-* **UC06 – Finalizar compra**
-* **UC07 – Efetuar pagamento**
+* **UC06 – Finalizar compra (checkout mobile)**
+* **UC07 – Efetuar pagamento (PIX/cartão/boleto)**
 * **UC08 – Consultar histórico de pedidos**
-* **UC09 – Gerenciar perfil**
-* **UC10 – Favoritar produto**
+* **UC09 – Gerenciar perfil de usuário**
+* **UC10 – Favoritar produtos**
+* **UC11 – Receber notificações push**
 
 ---
 
 ## 8. Requisitos Futuros (Roadmap)
 
-* Integração com APIs reais de pagamento e logística.
-* Push notifications.
-* Chat integrado (WhatsApp).
+* Integração com WhatsApp para atendimento.
 * Sistema de reviews com fotos.
 * Programa de afiliados.
-* Simulação de ambientes com realidade aumentada (AR).
+* Simulação dos produtos em ambiente via **Realidade Aumentada (AR)**.
 
----
-
-👉 Assim você tem uma **visão clara de requisitos** que pode evoluir para **casos de uso detalhados, protótipos e backlog de sprints**.
-
-Quer que eu faça também um **diagrama de casos de uso UML** baseado nesses requisitos? Isso deixaria ainda mais visual.
-s
